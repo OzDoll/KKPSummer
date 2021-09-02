@@ -16,3 +16,44 @@ Step -4 - https://docs.kubermatic.com/kubermatic/v2.17/guides/installation/insta
 Step -5  - Get seed config from tarball. And follow this link - https://docs.kubermatic.com/kubermatic/v2.17/guides/installation/add_seed_cluster_ce/
 Step -6 -  https://docs.kubermatic.com/kubermatic/v2.17/guides/installation/add_seed_cluster_ce/#:~:text=update%20dns
 Step -7  - https://docs.kubermatic.com/kubermatic/v2.17/tutorials_howtos/project_and_cluster_management/
+
+STEPS SUMMARY:
+
+	• git clone https://github.com/kubermatic/kubeone.git
+
+	• Edit Terraformts.vars
+
+	• Then copy the contents of the page step 1: you gotta have a key predefined into your AWS account
+
+	• Then export AWS key and secret
+
+	• Turn on ssh agent
+
+	• Terraform init from the folder you have the terraform folder Git Repos/kkp-demo/examples/terraform/aws
+
+	• Then terraform apply (we use bastion host)
+
+	• Create kubeone.yaml and copy the configuration from kubeone/provisioning
+
+	• After terraform runs, you need to export into tf.json output -json > tf.json
+
+	• Then apply via kubeone tool apply --manifest kubeone.yaml -t tf.json
+
+	• To check the kubeone options is kubeone config print
+
+	• I have to add KUBECONFIG everytime: export KUBECONFIG='/mnt/c/Users/damia.LAPTOP-JS9C9AKO/Documents/Git Repos/kkp-demo/examples/terraform/aws/kkp-demo-kubeconfig
+
+	• -----This is kubeone cluster running
+
+	• For KKP we need to download and install the tarball from the site then run : wget https://github.com/kubermatic/kubermatic/releases/download/v2.17.3/kubermatic-ce-v2.17.3-darwin-amd64.tar.gz
+
+	• Then extract tar ball -tar
+
+	• Prepare 3 files
+
+	• 
+	• Add the DNS and the host to the files, encrypt the passwords for the files and add the configuration needed
+
+	• Then we gotta add in AWS, add the storage: Install script: ./kubermatic-installer deploy --config examples/kubermatic.example.ce.yaml --helm-values examples/values.example.yaml --storageclass aws
+
+	• Add rules to the DNS and seed.
