@@ -1,0 +1,62 @@
+# Copyright 2020 The Kubermatic Kubernetes Platform contributors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Dex Is the OpenID Provider for Kubermatic.
+dex:
+  ingress:
+    # configure your base domain, under which the Kubermatic dashboard shall be available
+    host: ozdoll-k8s.com
+
+  clients:
+  # The "kubermatic" client is used for logging into the Kubermatic dashboard. It always
+  # needs to be configured.
+  - id: kubermatic
+    name: Kubermatic
+    # Generate a secure secret key
+    # Those can be generated on the shell using:
+    # cat /dev/urandom | tr -dc A-Za-z0-9 | head -c32
+    secret: jCZqMFqOFszEEu1WkiIaIemtozCp8Zi4
+    RedirectURIs:
+    # ensure the URLs below use the dex.ingress.host configured above
+    - https://ozdoll-k8s.com
+    - https://ozdoll-k8s.com/projects
+
+  # Depending on your chosen login method, you need to configure either an OAuth provider like
+  # Google or GitHub, or configure a set of static passwords. Check the `charts/oauth/values.yaml`
+  # for an overview over all available connectors.
+
+  # For testing purposes, we configure a single static user/password combination.
+  staticPasswords:
+  - email: damian@kubermatic.com
+    # bcrypt hash of the string "password", can be created using recent versions of htpasswd:
+    # `htpasswd -bnBC 10 "" PASSWORD_HERE | tr -d ':\n' | sed 's/$2y/$2a/'`
+    hash: "$2a$10$WOiys2H8zH5XZsA5W7eRk./TswMiE91LdHrTZyfnzqaqpMmOP43BK"
+
+    # these are used within Kubermatic to identify the user
+    username: admin
+    userID: 08a8684b-db88-4b73-90a9-3cd1661f5466
+
+  # the cert-manager Issuer (or ClusterIssuer) responsible for managing the certificates
+  # If you want to deploy your own certificate without relying on cert-manager
+  # uncomment the next line and remove subsequent certIssuer configuration.
+  # certIssuer: null
+  certIssuer:
+    # For generating a certificate signed by a trusted root authority replace
+    # with "letsencrypt-prod".
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+
+minio:
+  storeSize: '5Gi'
+  storageClass: minio-hdd

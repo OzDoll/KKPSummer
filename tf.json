@@ -1,0 +1,420 @@
+{
+  "kubeone_api": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "endpoint": "string"
+      }
+    ],
+    "value": {
+      "endpoint": "kkp-demo-api-lb-1198546431.eu-west-3.elb.amazonaws.com"
+    }
+  },
+  "kubeone_hosts": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "control_plane": [
+          "object",
+          {
+            "bastion": "string",
+            "bastion_port": "number",
+            "bastion_user": "string",
+            "cloud_provider": "string",
+            "cluster_name": "string",
+            "hostnames": [
+              "tuple",
+              [
+                "string",
+                "string",
+                "string"
+              ]
+            ],
+            "private_address": [
+              "tuple",
+              [
+                "string",
+                "string",
+                "string"
+              ]
+            ],
+            "ssh_agent_socket": "string",
+            "ssh_port": "number",
+            "ssh_private_key_file": "string",
+            "ssh_user": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "control_plane": {
+        "bastion": "35.180.121.41",
+        "bastion_port": 22,
+        "bastion_user": "ubuntu",
+        "cloud_provider": "aws",
+        "cluster_name": "kkp-demo",
+        "hostnames": [
+          "ip-172-31-78-83.eu-west-3.compute.internal",
+          "ip-172-31-79-199.eu-west-3.compute.internal",
+          "ip-172-31-80-38.eu-west-3.compute.internal"
+        ],
+        "private_address": [
+          "172.31.78.83",
+          "172.31.79.199",
+          "172.31.80.38"
+        ],
+        "ssh_agent_socket": "env:SSH_AUTH_SOCK",
+        "ssh_port": 22,
+        "ssh_private_key_file": "",
+        "ssh_user": "ubuntu"
+      }
+    }
+  },
+  "kubeone_static_workers": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "workers1": [
+          "object",
+          {
+            "bastion": "string",
+            "bastion_port": "number",
+            "bastion_user": "string",
+            "hostnames": [
+              "tuple",
+              []
+            ],
+            "private_address": [
+              "tuple",
+              []
+            ],
+            "ssh_agent_socket": "string",
+            "ssh_port": "number",
+            "ssh_private_key_file": "string",
+            "ssh_user": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "workers1": {
+        "bastion": "35.180.121.41",
+        "bastion_port": 22,
+        "bastion_user": "ubuntu",
+        "hostnames": [],
+        "private_address": [],
+        "ssh_agent_socket": "env:SSH_AUTH_SOCK",
+        "ssh_port": 22,
+        "ssh_private_key_file": "",
+        "ssh_user": "ubuntu"
+      }
+    }
+  },
+  "kubeone_workers": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "kkp-demo-eu-west-3a": [
+          "object",
+          {
+            "providerSpec": [
+              "object",
+              {
+                "cloudProviderSpec": [
+                  "object",
+                  {
+                    "ami": "string",
+                    "assignPublicIP": "bool",
+                    "availabilityZone": "string",
+                    "diskIops": "number",
+                    "diskSize": "number",
+                    "diskType": "string",
+                    "ebsVolumeEncrypted": "bool",
+                    "instanceProfile": "string",
+                    "instanceType": "string",
+                    "isSpotInstance": "bool",
+                    "region": "string",
+                    "securityGroupIDs": [
+                      "tuple",
+                      [
+                        "string"
+                      ]
+                    ],
+                    "subnetId": "string",
+                    "tags": [
+                      "object",
+                      {
+                        "kkp-demo-workers": "string"
+                      }
+                    ],
+                    "vpcId": "string"
+                  }
+                ],
+                "labels": [
+                  "object",
+                  {
+                    "isSpotInstance": "string"
+                  }
+                ],
+                "operatingSystem": "string",
+                "operatingSystemSpec": [
+                  "object",
+                  {
+                    "distUpgradeOnBoot": "bool"
+                  }
+                ],
+                "sshPublicKeys": [
+                  "list",
+                  "string"
+                ]
+              }
+            ],
+            "replicas": "number"
+          }
+        ],
+        "kkp-demo-eu-west-3b": [
+          "object",
+          {
+            "providerSpec": [
+              "object",
+              {
+                "cloudProviderSpec": [
+                  "object",
+                  {
+                    "ami": "string",
+                    "assignPublicIP": "bool",
+                    "availabilityZone": "string",
+                    "diskIops": "number",
+                    "diskSize": "number",
+                    "diskType": "string",
+                    "ebsVolumeEncrypted": "bool",
+                    "instanceProfile": "string",
+                    "instanceType": "string",
+                    "isSpotInstance": "bool",
+                    "region": "string",
+                    "securityGroupIDs": [
+                      "tuple",
+                      [
+                        "string"
+                      ]
+                    ],
+                    "subnetId": "string",
+                    "tags": [
+                      "object",
+                      {
+                        "kkp-demo-workers": "string"
+                      }
+                    ],
+                    "vpcId": "string"
+                  }
+                ],
+                "labels": [
+                  "object",
+                  {
+                    "isSpotInstance": "string"
+                  }
+                ],
+                "operatingSystem": "string",
+                "operatingSystemSpec": [
+                  "object",
+                  {
+                    "distUpgradeOnBoot": "bool"
+                  }
+                ],
+                "sshPublicKeys": [
+                  "list",
+                  "string"
+                ]
+              }
+            ],
+            "replicas": "number"
+          }
+        ],
+        "kkp-demo-eu-west-3c": [
+          "object",
+          {
+            "providerSpec": [
+              "object",
+              {
+                "cloudProviderSpec": [
+                  "object",
+                  {
+                    "ami": "string",
+                    "assignPublicIP": "bool",
+                    "availabilityZone": "string",
+                    "diskIops": "number",
+                    "diskSize": "number",
+                    "diskType": "string",
+                    "ebsVolumeEncrypted": "bool",
+                    "instanceProfile": "string",
+                    "instanceType": "string",
+                    "isSpotInstance": "bool",
+                    "region": "string",
+                    "securityGroupIDs": [
+                      "tuple",
+                      [
+                        "string"
+                      ]
+                    ],
+                    "subnetId": "string",
+                    "tags": [
+                      "object",
+                      {
+                        "kkp-demo-workers": "string"
+                      }
+                    ],
+                    "vpcId": "string"
+                  }
+                ],
+                "labels": [
+                  "object",
+                  {
+                    "isSpotInstance": "string"
+                  }
+                ],
+                "operatingSystem": "string",
+                "operatingSystemSpec": [
+                  "object",
+                  {
+                    "distUpgradeOnBoot": "bool"
+                  }
+                ],
+                "sshPublicKeys": [
+                  "list",
+                  "string"
+                ]
+              }
+            ],
+            "replicas": "number"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "kkp-demo-eu-west-3a": {
+        "providerSpec": {
+          "cloudProviderSpec": {
+            "ami": "ami-03569f6d482517724",
+            "assignPublicIP": true,
+            "availabilityZone": "eu-west-3a",
+            "diskIops": 500,
+            "diskSize": 50,
+            "diskType": "gp2",
+            "ebsVolumeEncrypted": false,
+            "instanceProfile": "kkp-demo-host",
+            "instanceType": "t3.medium",
+            "isSpotInstance": false,
+            "region": "eu-west-3",
+            "securityGroupIDs": [
+              "sg-018c2398ab8e477a1"
+            ],
+            "subnetId": "subnet-0a8fb4d09d01c11cb",
+            "tags": {
+              "kkp-demo-workers": ""
+            },
+            "vpcId": "vpc-3b01f653"
+          },
+          "labels": {
+            "isSpotInstance": "false"
+          },
+          "operatingSystem": "ubuntu",
+          "operatingSystemSpec": {
+            "distUpgradeOnBoot": false
+          },
+          "sshPublicKeys": [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8cBnFNZmp/uiz9x2bIcpKXHkdCWb+2/ZviRTR/YezwIYfnIJ9C2z5MTGmNxlxXphuJO7aCJ104hZjDEs29bTy3duasvyDf+jUVWXbN/I3m1IgmvelgPL0R5P50dXHcrwJYDRpimpl+EpWTSd/EwX4hBT4WzaKCNVrkTohklkkLvsp3BG0g6c1aXnqYyeDM4pkbdgZkvrMiQOjqQk/oVQs76wqB1vmJVFmZiNThXCpSyQpCnswpJ6U25UK0XLdA6BVEizbwQABTO9qEUk56RJFPd95vmOi4prvdSmKvSSik8qoLaGwXJROHu/SQK7Ka+52XawF+GhM2u+WLfzr55p9 aws4terraform"
+          ]
+        },
+        "replicas": 1
+      },
+      "kkp-demo-eu-west-3b": {
+        "providerSpec": {
+          "cloudProviderSpec": {
+            "ami": "ami-03569f6d482517724",
+            "assignPublicIP": true,
+            "availabilityZone": "eu-west-3b",
+            "diskIops": 500,
+            "diskSize": 50,
+            "diskType": "gp2",
+            "ebsVolumeEncrypted": false,
+            "instanceProfile": "kkp-demo-host",
+            "instanceType": "t3.medium",
+            "isSpotInstance": false,
+            "region": "eu-west-3",
+            "securityGroupIDs": [
+              "sg-018c2398ab8e477a1"
+            ],
+            "subnetId": "subnet-0dd86e5cd3ebd6c9f",
+            "tags": {
+              "kkp-demo-workers": ""
+            },
+            "vpcId": "vpc-3b01f653"
+          },
+          "labels": {
+            "isSpotInstance": "false"
+          },
+          "operatingSystem": "ubuntu",
+          "operatingSystemSpec": {
+            "distUpgradeOnBoot": false
+          },
+          "sshPublicKeys": [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8cBnFNZmp/uiz9x2bIcpKXHkdCWb+2/ZviRTR/YezwIYfnIJ9C2z5MTGmNxlxXphuJO7aCJ104hZjDEs29bTy3duasvyDf+jUVWXbN/I3m1IgmvelgPL0R5P50dXHcrwJYDRpimpl+EpWTSd/EwX4hBT4WzaKCNVrkTohklkkLvsp3BG0g6c1aXnqYyeDM4pkbdgZkvrMiQOjqQk/oVQs76wqB1vmJVFmZiNThXCpSyQpCnswpJ6U25UK0XLdA6BVEizbwQABTO9qEUk56RJFPd95vmOi4prvdSmKvSSik8qoLaGwXJROHu/SQK7Ka+52XawF+GhM2u+WLfzr55p9 aws4terraform"
+          ]
+        },
+        "replicas": 1
+      },
+      "kkp-demo-eu-west-3c": {
+        "providerSpec": {
+          "cloudProviderSpec": {
+            "ami": "ami-03569f6d482517724",
+            "assignPublicIP": true,
+            "availabilityZone": "eu-west-3c",
+            "diskIops": 500,
+            "diskSize": 50,
+            "diskType": "gp2",
+            "ebsVolumeEncrypted": false,
+            "instanceProfile": "kkp-demo-host",
+            "instanceType": "t3.medium",
+            "isSpotInstance": false,
+            "region": "eu-west-3",
+            "securityGroupIDs": [
+              "sg-018c2398ab8e477a1"
+            ],
+            "subnetId": "subnet-0408936d9155217f7",
+            "tags": {
+              "kkp-demo-workers": ""
+            },
+            "vpcId": "vpc-3b01f653"
+          },
+          "labels": {
+            "isSpotInstance": "false"
+          },
+          "operatingSystem": "ubuntu",
+          "operatingSystemSpec": {
+            "distUpgradeOnBoot": false
+          },
+          "sshPublicKeys": [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8cBnFNZmp/uiz9x2bIcpKXHkdCWb+2/ZviRTR/YezwIYfnIJ9C2z5MTGmNxlxXphuJO7aCJ104hZjDEs29bTy3duasvyDf+jUVWXbN/I3m1IgmvelgPL0R5P50dXHcrwJYDRpimpl+EpWTSd/EwX4hBT4WzaKCNVrkTohklkkLvsp3BG0g6c1aXnqYyeDM4pkbdgZkvrMiQOjqQk/oVQs76wqB1vmJVFmZiNThXCpSyQpCnswpJ6U25UK0XLdA6BVEizbwQABTO9qEUk56RJFPd95vmOi4prvdSmKvSSik8qoLaGwXJROHu/SQK7Ka+52XawF+GhM2u+WLfzr55p9 aws4terraform"
+          ]
+        },
+        "replicas": 1
+      }
+    }
+  },
+  "ssh_commands": {
+    "sensitive": false,
+    "type": [
+      "list",
+      "string"
+    ],
+    "value": [
+      "ssh -J ubuntu@35.180.121.41 ubuntu@172.31.78.83",
+      "ssh -J ubuntu@35.180.121.41 ubuntu@172.31.79.199",
+      "ssh -J ubuntu@35.180.121.41 ubuntu@172.31.80.38"
+    ]
+  }
+}
