@@ -1,0 +1,18 @@
+KKP requires a cluster to be installed in, we usually use Kubeone for it, the normal KubeOne install has has 3 masters 3 workers nodes. 
+KKP gets into 1 kubermetic cluster, KubeOne is the vanilla one, for a single process. All docs can be found here - As for steps:
+
+- You need to provision the hardware Provision infrastructure, can be done manually or by terraforming. 
+- KubeOne CLI can be used to provision everything. In the KubeOne GIt I can find the examples of the tools, from AWS and for other cloud providers.
+- To terraform: https://docs.kubermatic.com/kubeone/v1.2/infrastructure/terraform_configs/ 
+- For provisioning: https://docs.kubermatic.com/kubeone/v1.2/provisioning/ - Can be done in any Cloud or Prem as Packet.
+- There's gonna be 2 clusters, master and a seed cluster. There's gonna be 2 clusters depending the setup in the Cloud. 
+
+Steps for the installation of KKP:
+
+Step -1 -https://docs.kubermatic.com/kubeone/v1.2/infrastructure/terraform_configs/
+Step -2- https://docs.kubermatic.com/kubeone/v1.2/provisioning/
+Step -3 - https://docs.kubermatic.com/kubermatic/v2.17/guides/installation/install_kkp_ce/
+Step -4 - https://docs.kubermatic.com/kubermatic/v2.17/guides/installation/install_kkp_ce/#:~:text=create%20dns%20records
+Step -5  - Get seed config from tarball. And follow this link - https://docs.kubermatic.com/kubermatic/v2.17/guides/installation/add_seed_cluster_ce/
+Step -6 -  https://docs.kubermatic.com/kubermatic/v2.17/guides/installation/add_seed_cluster_ce/#:~:text=update%20dns
+Step -7  - https://docs.kubermatic.com/kubermatic/v2.17/tutorials_howtos/project_and_cluster_management/
